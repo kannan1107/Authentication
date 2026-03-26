@@ -109,7 +109,7 @@ npm start
 Server will run on:
 
 ```
-http://localhost:4500
+http://localhost:6500
 ```
 
 ---
@@ -208,5 +208,5 @@ Authorization: Bearer <token>
   
 
 
-- The application will run at `http://localhost:5000`.
+- The application will run at `http://localhost:6500`.
 

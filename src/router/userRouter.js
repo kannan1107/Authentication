@@ -8,6 +8,7 @@ import {
   getAllUsers,
   getUserById,
   loginUser,
+  showLoginDetails,
   updateUser,
   updateUserRole,
 } from "../controller/userController.js";
@@ -19,5 +20,6 @@ authRoutes.get("/users/:id", protect, getUserById);
 authRoutes.put("/users/:id", protect, updateUser);
 authRoutes.put("/users/:id/role", protect, updateUserRole);
 authRoutes.delete("/users/:id", protect, deleteUser);
+authRoutes.get("/me", protect, showLoginDetails);
 
 export default authRoutes;

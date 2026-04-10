@@ -146,7 +146,8 @@ export const updateUserRole = async (req, res) => {
       message: "User role updated successfully",
       user,
     });
-  } catch (error) {
+  } catch
+   (error) {
     res.status(500).json({
       status: "error",
       message: error.message,
@@ -286,6 +287,34 @@ export const updatePassword = async (req, res) => {
     res.status(200).json({
       status: "success",
       message: "Password updated successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      message: error.message,
+    });
+  }
+};
+
+// show the login details
+
+export const showLoginDetails = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({
+        status: "error",
+        message: "User not found",
+      });
+    }
+    res.status(200).json({  
+      status: "success",
+      message: "User details fetched successfully",
+      email: user.email,
+      name: user.name,
+      password: user.password,
+      
     });
   } catch (error) {
     res.status(500).json({

@@ -165,7 +165,7 @@ http://localhost:6500
 
 ### 🟡 Get User Profile (Protected)
 
-**GET** `http://localhost:6500/api/users`
+**GET** `http://localhost:6500/api/me`
 
 #### Headers:
 
